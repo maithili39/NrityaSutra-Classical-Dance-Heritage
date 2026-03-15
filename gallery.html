@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Classical Dance Images | NrityaKala</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts - Same as other pages -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    :root {
+      --primary-color: #FF6B6B;
+      --secondary-color: #4ECDC4;
+      --accent-color: #d4af37;
+      --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --gallery-gradient: linear-gradient(135deg, #faf8f3 0%, #f0e6d2 100%);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+    }
+
+    /* Enhanced Navbar Styles */
+    .enhanced-navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand-enhanced {
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand-enhanced:hover {
+      transform: scale(1.05);
+      color: #333;
+    }
+
+    .navbar-logo-enhanced {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .navbar-title-enhanced {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .navbar-title-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-title-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-tagline-enhanced {
+      color: #bbb;
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+
+    .enhanced-nav-link {
+      color: #2c3e50;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .enhanced-nav-link:hover {
+      color: #d4af37 !important;
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .enhanced-nav-link.active {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff !important;
+    }
+
+    .enhanced-dropdown {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .enhanced-dropdown-item {
+      color: #2c3e50;
+      transition: all 0.3s ease;
+    }
+
+    .enhanced-dropdown-item:hover {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff;
+      transform: translateX(5px);
+    }
+
+    .enhanced-toggler {
+      border-color: #d4af37;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: var(--gallery-gradient);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Filter Buttons */
+    .filter-section {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      margin: 4rem 0;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .filter-btn {
+      background: white;
+      border: 2px solid var(--accent-color);
+      color: var(--accent-color);
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      margin: 4rem 0;
+      padding: 3rem 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+    }
+
+    .gallery-grid .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+
+    .gallery-grid .col-lg-4,
+    .gallery-grid .col-md-6 {
+      padding: 0 15px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .gallery-item {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s ease;
+      position: relative;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 1rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px 32px 0 0;
+      border-bottom: 3px solid rgba(212, 175, 55, 0.2);
+      flex-shrink: 0;
+    }
+
+    .gallery-img img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 32px 32px 0 0;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-img img {
+      transform: scale(1.05);
+    }
+
+    .gallery-img img[src=""]:not([src]) {
+      display: none;
+    }
+
+    .gallery-img img[src]:not([src=""]) {
+      display: block !important;
+    }
+
+    .gallery-img::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      opacity: 0.1;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-img::before {
+      opacity: 0.2;
+    }
+
+    .gallery-info {
+      padding: 2rem;
+      background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .gallery-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .gallery-description {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .dance-category {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+      z-index: 3;
+    }
+
+    /* Featured Gallery */
+    .featured-gallery {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 4rem 3rem;
+      margin: 4rem 0;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .featured-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .featured-item {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s ease;
+      height: 100%;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .featured-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .featured-img {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .featured-img img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .featured-item:hover .featured-img img {
+      transform: scale(1.05);
+    }
+
+    .featured-img img[src=""]:not([src]) {
+      display: none;
+    }
+
+    .featured-img img[src]:not([src=""]) {
+      display: block !important;
+    }
+
+    .featured-content {
+      padding: 2rem;
+      background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    }
+
+    .featured-content h5 {
+      font-family: 'Playfair Display', serif;
+      color: var(--secondary-color);
+      margin-bottom: 0.8rem;
+    }
+
+    /* Modal Styles */
+    .gallery-modal .modal-content {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: none;
+      border-radius: 20px;
+    }
+
+    .gallery-modal .modal-header {
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 1.5rem;
+    }
+
+    .gallery-modal .modal-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-color);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: white;
+      border-radius: 25px;
+      padding: 4rem 3rem;
+      margin: 4rem 0;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #666;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    /* Footer Styles */
+    .about-footer {
+      background: #fff;
+      color: #333;
+      border-top: 1px solid #eee;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-title-colorful .footer-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 700;
+    }
+
+    .footer-title-colorful .footer-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 700;
+    }
+
+    .about-footer-link {
+      color: #666;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 0.2rem 0;
+    }
+
+    .about-footer-link:hover,
+    .about-footer-link.active {
+      color: #d4af37;
+      transform: translateX(5px);
+    }
+
+    .about-social-link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background: none;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .about-social-link:hover {
+      transform: translateY(-3px);
+      color: #d4af37;
+      box-shadow: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .featured-title {
+        font-size: 2rem;
+      }
+      
+      .featured-gallery,
+      .stats-section,
+      .filter-section {
+        padding: 2rem 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .gallery-grid {
+        margin: 2rem 0;
+        padding: 2rem 1rem;
+      }
+
+      .gallery-grid .row {
+        margin: 0 -10px;
+      }
+
+      .gallery-grid .col-lg-4,
+      .gallery-grid .col-md-6 {
+        padding: 0 10px;
+        margin-bottom: 20px;
+      }
+      
+      .gallery-img {
+        height: 220px;
+      }
+
+      .featured-img {
+        height: 180px;
+      }
+    }
+
+    /* Section Separators */
+    .section-separator {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+      margin: 3rem 0;
+      opacity: 0.3;
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Loading Animation */
+    .loading-placeholder {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    @keyframes gradientShift {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      50% {
+        filter: hue-rotate(180deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar: exact replica from bharatanatyam.html -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top enhanced-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4 fw-bold d-flex align-items-center navbar-brand-enhanced" href="index.html">
+        <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3 navbar-logo-enhanced">
+        <div>
+          <span class="navbar-title-enhanced">
+            <span class="navbar-title-nritya fw-bold">Nritya</span><span class="navbar-title-kala fw-bold">Kala</span>
+          </span>
+          <small class="navbar-tagline-enhanced d-block">Classical Dance Heritage</small>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 enhanced-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse fs-6" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown mx-1">
+            <a class="nav-link dropdown-toggle fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="#"
+              role="button" data-bs-toggle="dropdown">Dance Forms</a>
+            <ul class="dropdown-menu shadow-lg border-0 p-2 enhanced-dropdown">
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="bharatanatyam.html">Bharatanatyam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="kathak.html">Kathak</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="odissi.html">Odissi</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="kuchipudi.html">Kuchipudi</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="kathakali.html">Kathakali</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="mohiniyattam.html">Mohiniyattam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="manipuri.html">Manipuri</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 enhanced-dropdown-item" href="sattriya.html">Sattriya</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link active" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="about.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <div class="mb-4">
+              <h1 class="hero-title">Gallery</h1>
+              <p class="hero-subtitle">Visual Journey Through Classical Dance</p>
+              <p class="hero-description">Explore the beauty and grace of India's classical dance forms through our curated collection of images showcasing performances, costumes, expressions, and traditions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <div class="container">
+    <section class="filter-section text-center fade-in">
+      <h4 class="mb-4" style="color: #333;">Filter by Dance Form</h4>
+      <div class="filter-buttons">
+        <button class="btn filter-btn active" data-filter="all">All Dances</button>
+        <button class="btn filter-btn" data-filter="bharatanatyam">Bharatanatyam</button>
+        <button class="btn filter-btn" data-filter="kathak">Kathak</button>
+        <button class="btn filter-btn" data-filter="odissi">Odissi</button>
+        <button class="btn filter-btn" data-filter="kuchipudi">Kuchipudi</button>
+        <button class="btn filter-btn" data-filter="kathakali">Kathakali</button>
+        <button class="btn filter-btn" data-filter="mohiniyattam">Mohiniyattam</button>
+        <button class="btn filter-btn" data-filter="manipuri">Manipuri</button>
+        <button class="btn filter-btn" data-filter="sattriya">Sattriya</button>
+      </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Stats Section -->
+    <section class="stats-section fade-in">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Dance Forms</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item">
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Performance Images</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Artists Featured</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Cultural Events</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Featured Gallery -->
+    <section class="featured-gallery fade-in">
+      <h2 class="featured-title">Featured Performances</h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="featured-item">
+            <div class="featured-img">
+              <span class="dance-category">Bharatanatyam</span>
+              <img src="https://t3.ftcdn.net/jpg/03/65/13/52/360_F_365135250_D4slgOo8wAYADnqNvaMtR9hIu17ySXmV.jpg" alt="Featured Bharatanatyam Performance" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Featured Bharatanatyam Performance
+            </div>
+            <div class="featured-content">
+              <h5>Classical Bharatanatyam Recital</h5>
+              <p class="text-muted">A mesmerizing performance showcasing the grace and precision of Bharatanatyam at the Chennai Music Festival.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="featured-item">
+            <div class="featured-img">
+              <span class="dance-category">Kathak</span>
+              <img src="https://plus.unsplash.com/premium_photo-1720798653902-e171f3a4f353?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2F0aGFrfGVufDB8fDB8fHww" alt="Featured Kathak Performance" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Featured Kathak Performance
+            </div>
+            <div class="featured-content">
+              <h5>Elegant Kathak Expression</h5>
+              <p class="text-muted">Dynamic spins and storytelling through dance captured during a traditional Kathak performance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="featured-item">
+            <div class="featured-img">
+              <span class="dance-category">Odissi</span>
+              <img src="https://images.pexels.com/photos/14106720/pexels-photo-14106720.jpeg?cs=srgb&dl=pexels-suguna-14106720.jpg&fm=jpg" alt="Featured Odissi Performance" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Featured Odissi Performance
+            </div>
+            <div class="featured-content">
+              <h5>Graceful Odissi Movements</h5>
+              <p class="text-muted">The flowing sculptures of Odissi dance brought to life with divine expressions and postures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Main Gallery Grid -->
+    <section class="gallery-grid fade-in">
+      <h2 class="featured-title" style="margin-bottom: 3rem;">Complete Gallery Collection</h2>
+      <div class="row g-4" id="galleryContainer ">
+        <!-- Bharatanatyam Gallery Items -->
+        <div class="col-lg-4 col-md-6" data-category="bharatanatyam">
+        
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Bharatanatyam</span>
+              <img src="https://www.shutterstock.com/image-photo/portrait-three-expressive-young-indian-600nw-2380221645.jpg" alt="Traditional Bharatanatyam Costume" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Traditional Bharatanatyam Costume
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Traditional Costume Display</h5>
+              <p class="gallery-description">Exquisite Bharatanatyam costume with traditional jewelry and makeup, showcasing the artistic heritage.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-category="bharatanatyam">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Bharatanatyam</span>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReI9p3JGVJUWHgisOkHWWQxzMfAXCzLonPJA&s" alt="Bharatanatyam Expressions" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Bharatanatyam Expressions
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Divine Expressions</h5>
+              <p class="gallery-description">Capturing the nine emotions (navarasas) through facial expressions in Bharatanatyam.</p>
+            </div>
+          </div>
+        </div>        <!-- Kathak Gallery Items -->
+        <div class="col-lg-4 col-md-6" data-category="kathak">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Kathak</span>
+              <img src="https://nadroop.org/wp-content/uploads/2020/07/Nadroop-Kathak-Dance-Production-Kathak-Infinate.jpg" alt="Kathak Spinning Performance" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Kathak Spinning Performance
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Whirling Excellence</h5>
+              <p class="gallery-description">The signature spinning movement of Kathak captured in perfect motion and grace.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-category="kathak">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Kathak</span>
+              <img src="https://content.jdmagicbox.com/v2/comp/bangalore/g9/080pxx80.xx80.130107090005.v1g9/catalogue/riddham-kathak-school-yelahanka-new-town-bangalore-dance-classes-for-kathak-4jwq767co6.jpg" alt="Kathak Hand Gestures" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Kathak Hand Gestures
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Expressive Mudras</h5>
+              <p class="gallery-description">Intricate hand gestures telling stories through the language of Kathak dance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Odissi Gallery Items -->
+        <div class="col-lg-4 col-md-6" data-category="odissi">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Odissi</span>
+              <img src="https://c8.alamy.com/comp/FG1A93/dancers-performing-classical-traditional-odissi-dance-at-konarak-sun-FG1A93.jpg" alt="Odissi Temple Dance" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Odissi Temple Dance
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Temple Sculptures Come Alive</h5>
+              <p class="gallery-description">Odissi poses mirroring the sculptures of ancient temples in Odisha.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-category="odissi">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Odissi</span>
+              <img src="https://png.pngtree.com/background/20250319/original/pngtree-odissi-dancer-striking-a-pose-photo-picture-image_15682106.jpg" alt="Odissi Tribhangi Pose" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Odissi Tribhangi Pose
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Classic Tribhangi</h5>
+              <p class="gallery-description">The signature three-bend posture that defines the grace of Odissi dance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kuchipudi Gallery Items -->
+        <div class="col-lg-4 col-md-6" data-category="kuchipudi">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Kuchipudi</span>
+              <img src="https://media.istockphoto.com/id/507419740/photo/girl-dancing-classical-indin-dance-kuchipudi.jpg?s=612x612&w=0&k=20&c=C5rFrMoVni6YgyCTjLPxvlJwRoV9C9GQpujwAOPmbQc=" alt="Kuchipudi Dance Drama" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Kuchipudi Dance Drama
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Dramatic Storytelling</h5>
+              <p class="gallery-description">The unique blend of dance and drama that makes Kuchipudi so captivating.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-category="kuchipudi">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Kuchipudi</span>
+              <img src="https://vemulaphotography.files.wordpress.com/2011/04/aneeshaanuja_02012011-065.jpg" alt="Kuchipudi Village Performance" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Kuchipudi Village Performance
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Village Traditions</h5>
+              <p class="gallery-description">Traditional Kuchipudi performance in its birthplace village in Andhra Pradesh.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kathakali Gallery Items -->
+        <div class="col-lg-4 col-md-6" data-category="kathakali">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Kathakali</span>
+              <img src="https://learn.humsa.com/wp-content/uploads/2023/11/image-198-1024x683.jpeg" alt="Kathakali Makeup Art" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Kathakali Makeup Art
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Elaborate Makeup Artistry</h5>
+              <p class="gallery-description">The intricate makeup and costume preparation process of Kathakali performers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-category="kathakali">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Kathakali</span>
+              <img src="https://www.robinage.com/wp-content/uploads/2022/09/Kathakali-800x534.jpg" alt="Kathakali Character Performance" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Kathakali Character Performance
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Mythological Characters</h5>
+              <p class="gallery-description">Powerful portrayal of epic characters through Kathakali's dramatic expressions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mohiniyattam Gallery Items -->
+        <div class="col-lg-4 col-md-6" data-category="mohiniyattam">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Mohiniyattam</span>
+              <img src="https://caleidoscope.in/wp-content/uploads/2019/10/Mohiniyattam-Information.jpg" alt="Mohiniyattam Grace" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Mohiniyattam Grace
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Feminine Grace</h5>
+              <p class="gallery-description">The gentle, swaying movements that characterize the beauty of Mohiniyattam.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manipuri Gallery Items -->
+        <div class="col-lg-4 col-md-6" data-category="manipuri">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Manipuri</span>
+              <img src="https://nexplore.org/blog/wp-content/uploads/2020/11/Why-you-should-not-miss-Raas-Leela-in-Manipur.jpg" alt="Manipuri Raas Leela" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Manipuri Raas Leela
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Divine Raas Leela</h5>
+              <p class="gallery-description">The spiritual essence of Manipuri dance depicting Krishna's divine play.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sattriya Gallery Items -->
+        <div class="col-lg-4 col-md-6" data-category="sattriya">
+          <div class="gallery-item">
+            <div class="gallery-img">
+              <span class="dance-category">Sattriya</span>
+              <img src="https://blogs.loc.gov/folklife/files/2019/03/Sattriya-5_3000.jpg" alt="Sattriya Monastery Dance" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              Sattriya Monastery Dance
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">Monastery Traditions</h5>
+              <p class="gallery-description">The sacred dance form performed in Assamese monasteries for centuries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer: exact replica from bharatanatyam.html -->
+  <footer class="about-footer" style="padding: 20px 0;">
+    <div class="container">
+      <div class="row">
+        <!-- Brand Section -->
+        <div class="col-lg-6 col-md-12 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3">
+            <div>
+              <h5 class="mb-1 footer-title-colorful" style="font-weight: 600;">
+                <span class="footer-nritya">Nritya</span><span class="footer-kala">Kala</span>
+              </h5>
+              <small style="color: #666;">Celebrating Classical Dance Heritage</small>
+            </div>
+          </div>
+          <p style="color: #666;">Preserving and promoting the timeless beauty of Indian classical dance for future generations.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="about-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Links & Contact Section -->
+        <div class="col-lg-6 col-md-12">
+          <div class="row">
+            <!-- Quick Links -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Quick Links</h6>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="about-footer-link">Home</a></li>
+                <li><a href="index.html#dance-forms" class="about-footer-link">Dance Forms</a></li>
+                <li><a href="gallery.html" class="about-footer-link active">Gallery</a></li>
+                <li><a href="events.html" class="about-footer-link">Events</a></li>
+                <li><a href="about.html" class="about-footer-link">About Us</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Contact</h6>
+              <div style="color: #666;">
+                <p><i class="bi bi-geo-alt-fill me-2" style="color: #d4af37;"></i>123 Dance Street, Nagpur, Maharashtra</p>
+                <p><i class="bi bi-telephone-fill me-2" style="color: #d4af37;"></i>+91 98765 43210</p>
+                <p><i class="bi bi-envelope-fill me-2" style="color: #d4af37;"></i>info@nrityakala.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Gallery filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const filter = this.getAttribute('data-filter');
+          
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter gallery items
+          galleryItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+              item.style.display = 'block';
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, 100);
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                item.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+
+      // Fade in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.enhanced-navbar');
+        if (navbar) {
+          if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
+          } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(15px)';
+          }
+        }
+      });
+
+      // Gallery item hover effects
+      document.querySelectorAll('.gallery-item, .featured-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        item.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

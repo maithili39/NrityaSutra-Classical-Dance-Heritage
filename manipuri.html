@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipuri - Classical Dance of Manipur | NrityaKala</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Add missing CSS variables */
+    :root {
+      --primary-color: #FF6B6B;
+      --secondary-color: #4ECDC4;
+      --accent-color: #d4af37;
+      --text-light: #64748b;
+      --text-dark: #2c3e50;
+      --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --primary-gradient: linear-gradient(45deg, #FF6B6B 0%, #4ECDC4 100%);
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+      background-attachment: fixed;
+      background-size: cover;
+      min-height: 100vh;
+    }
+
+    .content-image {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+      display: inline-block;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+    
+    .content-image:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+    
+    .content-image img {
+      width: 100%;
+      transition: all 0.4s ease;
+      filter: brightness(1.05) contrast(1.1) saturate(1.05);
+    }
+    
+    .content-image:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1) contrast(1.15) saturate(1.1);
+    }
+    
+    .small-image {
+      width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      display: inline-block;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+    
+    .small-image:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .small-image img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: all 0.4s ease;
+      filter: brightness(1.05) contrast(1.1) saturate(1.05);
+    }
+    
+    .small-image:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1) contrast(1.15) saturate(1.1);
+    }
+
+     /* Navbar Styles */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 0.5rem 0;
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand {
+      color: #333;
+    }
+
+    .navbar-title-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-title-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-title-enhanced {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .navbar-tagline-enhanced {
+      color: #bbb;
+      font-size: 0.75rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .enhanced-navbar {
+      background: #ffffff;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .enhanced-nav-link {
+      color: #2c3e50 !important;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .enhanced-nav-link:hover {
+      color: #d4af37 !important;
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .enhanced-nav-link.active {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff !important;
+    }
+
+    .enhanced-dropdown {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .enhanced-dropdown-item {
+      color: #2c3e50;
+      transition: all 0.3s ease;
+    }
+
+    .enhanced-dropdown-item:hover {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff;
+      transform: translateX(5px);
+    }
+
+    .enhanced-dropdown-item.active {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff;
+    }
+
+    .enhanced-toggler {
+      border-color: #d4af37;
+    }
+
+    /* Add missing navbar brand enhanced styles */
+    .navbar-brand-enhanced {
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand-enhanced:hover {
+      transform: scale(1.05);
+    }
+
+    .navbar-logo-enhanced {
+      transition: all 0.3s ease;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      33% {
+        background-position: 50% 100%;
+      }
+
+      66% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Brand and decorative text */
+    .navbar-title-enhanced,
+    .navbar-title-nritya,
+    .navbar-title-kala,
+    .footer-title-colorful,
+    .footer-nritya,
+    .footer-kala,
+    .story-name,
+    .dancer-name {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(224, 231, 255, 0.3);
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 80px;
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+      overflow: hidden;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: titleFloat 6s ease-in-out infinite;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #667eea;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    @keyframes titleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero-content {
+      padding: 1rem 0;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: titleFloat 6s ease-in-out infinite;
+    }
+
+    /* Content Sections */
+    .content-section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(193, 154, 107, 0.1);
+    }
+
+    .content-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #1e293b;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .section-title::after {
+      display: none;
+    }
+
+    .section-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .section-content {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .feature-card {
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+      text-align: center;
+      border: 1px solid rgba(193, 154, 107, 0.1);
+    }
+
+    /* Distinctive Features Colors */
+    .feature-card:nth-child(1) { background: #fffbe6; }
+    .feature-card:nth-child(2) { background: #e6f7ff; }
+    .feature-card:nth-child(3) { background: #f9f0ff; }
+    .feature-card:nth-child(4) { background: #e6fffb; }
+    .feature-card:nth-child(5) { background: #f6ffed; }
+    .feature-card:nth-child(6) { background: #fff0f6; }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(193, 154, 107, 0.2);
+    }
+    .feature-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 10px;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      filter: brightness(1.05) contrast(1.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .feature-card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1) contrast(1.15);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .feature-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+    /* Image Containers with enhanced positioning */
+    .content-image {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .content-image img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      filter: brightness(1.05) contrast(1.1);
+    }
+
+    .small-image {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .small-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .small-image img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      filter: brightness(1.03) contrast(1.08);
+    }
+
+    .hero-image-container {
+      width: 100%;
+      max-width: 700px;
+      height: 350px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 2rem auto 1.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      display: block;
+      position: relative;
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 15px;
+      transition: all 0.4s ease;
+      filter: brightness(1.1) contrast(1.15) saturate(1.1);
+    }
+    /* Enhanced Footer Styles */
+    .about-footer {
+      background: #fff;
+      margin-top: 0;
+      border-top: none;
+    }
+
+    .footer-title-colorful .footer-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 700;
+    }
+
+    .footer-title-colorful .footer-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 700;
+    }
+
+    .about-footer-link {
+      color: #666;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 0.2rem 0;
+    }
+
+    .about-footer-link:hover,
+    .about-footer-link.active {
+      color: #d4af37;
+      transform: translateX(5px);
+    }
+
+    .about-social-link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background: none;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .about-social-link:hover {
+      transform: translateY(-3px);
+      color: #d4af37;
+      box-shadow: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-title { font-size: 2rem; }
+      .content-section { padding: 2rem; }
+      .hero-title { font-size: 2.5rem; }
+      .content-image img { height: 280px; }
+      .small-image img { height: 180px; }
+    }
+
+    /* Global Image Enhancement */
+    img {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+    
+    /* Smooth loading animations */
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .content-image, .small-image {
+      animation: fadeInScale 0.6s ease-out;
+    }
+
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+    .text-primary-custom { color: #FF6B6B !important; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top enhanced-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4 fw-bold d-flex align-items-center navbar-brand-enhanced" href="index.html">
+        <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3 navbar-logo-enhanced">
+        <div>
+          <span class="navbar-title-enhanced">
+            <span class="navbar-title-nritya fw-bold">Nritya</span><span class="navbar-title-kala fw-bold">Kala</span>
+          </span>
+          <small class="navbar-tagline-enhanced d-block">Classical Dance Heritage</small>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 enhanced-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse fs-6" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown mx-1">
+            <a class="nav-link dropdown-toggle fw-semibold px-3 py-2 rounded-pill enhanced-nav-link active" href="#"
+              role="button" data-bs-toggle="dropdown">Dance Forms</a>
+            <ul class="dropdown-menu shadow-lg border-0 p-2 enhanced-dropdown">
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="bharatanatyam.html">Bharatanatyam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="kathak.html">Kathak</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="odissi.html">Odissi</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="kuchipudi.html">Kuchipudi</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="kathakali.html">Kathakali</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="mohiniyattam.html">Mohiniyattam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item active"
+                  href="manipuri.html">Manipuri</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 enhanced-dropdown-item" href="sattriya.html">Sattriya</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="about.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="padding-top: 20px; padding-bottom: 40px;">
+    <div class="hero-content">
+      <div class="container-fluid px-4 px-md-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
+            <div class="text-center" style="margin-bottom: 2.5rem;">
+              <h1 class="hero-title" style="margin-top: -1.5rem; margin-bottom: 0.3rem;">Manipuri</h1>
+              <p class="hero-subtitle" style="margin-bottom: 1.2rem;">The Divine Dance of Manipur</p>
+              <p class="lead text-dark" style="margin-bottom: 0; font-size: 1.2rem; line-height: 1.6; color: var(--text-light) !important;">Experience the ethereal grace, devotional storytelling, and spiritual beauty of Manipuri, the classical dance form of Manipur, renowned for its Raas Leela and gentle, flowing movements.</p>
+            </div>
+            <div class="hero-image-container mx-auto">
+              <img src="https://cdn.britannica.com/44/137144-050-E1E8E0EB/Raslila-life-scenes-manipuri-style-Krishna-India.jpg" alt="Manipuri hero image" style="transition: all 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='brightness(1.15) contrast(1.2) saturate(1.15)'" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(1.1) contrast(1.15) saturate(1.1)'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container" style="margin-top: 0; padding-top: 1rem;">
+    <br><br>
+    <!-- Introduction -->
+    <section class="content-section fade-in">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2 class="section-title">The Sacred Art of Manipuri</h2>
+          <div class="section-content">
+            <p class="lead">Manipuri is a classical dance form from the northeastern state of Manipur. It is celebrated for its soft, lyrical movements, devotional themes, and the iconic Raas Leela performances depicting the love of Radha and Krishna.</p>
+            <p>Rooted in Vaishnavism, Manipuri dance is performed with gentle, rounded movements, avoiding sharp lines and emphasizing spiritual expression. The dance is traditionally accompanied by Manipuri classical music and unique percussion instruments.</p>
+            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(78, 205, 196, 0.15) 100%); padding: 2rem; border-radius: 20px; border-left: 5px solid #FF6B6B; margin: 2rem 0; backdrop-filter: blur(10px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);">
+              <strong><i class="bi bi-heart"></i> Essence of Manipuri:</strong> A harmonious blend of devotion, grace, and storytelling, evoking the divine love and spiritual ecstasy of Krishna and Radha.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center">
+          <div class="content-image">
+            <img src="https://i.pinimg.com/originals/cf/b9/26/cfb9261071a3c73fc832ac838e081f99.jpg" alt="Manipuri dancer">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Historical Origins -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Sacred Origins</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-content">
+            <h4 class="section-subtitle">Temple & Ritual Traditions</h4>
+            <p>Manipuri dance has its roots in the ancient rituals and festivals of Manipur, especially the Lai Haraoba festival, which celebrates the creation myths of the Meitei people. The dance evolved further with the influence of Vaishnavism, leading to the development of the Raas Leela tradition.</p>
+            <p>Manipuri was nurtured in temples and royal courts, with both men and women performing devotional dances as offerings to the deities.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="content-image">
+            <img src="https://www.hlimg.com/images/events/738X538/event_1528364817m1.jpg" alt="Manipuri temple dance">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distinctive Features -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Distinctive Features of Manipuri</h2>
+      <div class="section-content">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-droplet"></i></div>
+              <h5 class="feature-title">Gentle, Flowing Movements</h5>
+              <p>Movements are soft, rounded, and continuous, symbolizing the gentle nature of the Manipuri landscape.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-heart"></i></div>
+              <h5 class="feature-title">Raas Leela</h5>
+              <p>The iconic dance-drama depicting the divine love of Radha and Krishna, performed with devotion and grace.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-music-note-beamed"></i></div>
+              <h5 class="feature-title">Unique Music & Percussion</h5>
+              <p>Accompanied by Manipuri classical music, pung (drum), kartal (cymbals), and flute.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-person"></i></div>
+              <h5 class="feature-title">Costume & Attire</h5>
+              <p>Female dancers wear the unique Kumil (cylindrical skirt), translucent veil, and traditional jewelry.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-people"></i></div>
+              <h5 class="feature-title">Group Choreography</h5>
+              <p>Often performed in groups, especially in Raas Leela, with synchronized, harmonious movements.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-star"></i></div>
+              <h5 class="feature-title">Spiritual Expression</h5>
+              <p>Focuses on devotion, humility, and spiritual elevation through dance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Costume & Music -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Costume, Music & Aesthetics</h2>
+      <div class="row">
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <div class="content-image">
+            <img src="https://i.ytimg.com/vi/Y5pR5fOk_Q4/maxresdefault.jpg" alt="Manipuri costume">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="section-content">
+            <h4 class="section-subtitle">Traditional Attire</h4>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-gem text-primary-custom"></i> <strong>Kumil:</strong> Decorated cylindrical skirt for female dancers</li>
+              <li><i class="bi bi-gem text-primary-custom"></i> <strong>Veil:</strong> Translucent white veil covering the head</li>
+              <li><i class="bi bi-gem text-primary-custom"></i> <strong>Jewelry:</strong> Traditional Manipuri ornaments</li>
+            </ul>
+            <h5 class="text-primary-custom mt-4"><i class="bi bi-music-note-beamed"></i> Musical Accompaniment</h5>
+            <p>Manipuri dance is performed to classical Manipuri music, featuring:</p>
+            <ul>
+              <li><strong>Pung:</strong> Main percussion drum</li>
+              <li><strong>Kartal:</strong> Cymbals</li>
+              <li><strong>Bansuri:</strong> Flute</li>
+              <li><strong>Vocals:</strong> Devotional songs in Manipuri and Sanskrit</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Learning Path for Manipuri</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="section-content">
+            <p class="lead">Begin your Manipuri journey with a focus on devotion, grace, and group harmony.</p>
+            <div class="row g-3 mt-4">
+              <div class="col-md-6">
+                <div class="card h-100" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(78, 205, 196, 0.05) 100%); border: 2px solid rgba(255, 107, 107, 0.2); border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);">
+                  <div class="card-body text-center">
+                    <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; background: linear-gradient(45deg, #FF6B6B, #4ECDC4);">
+                      <i class="bi bi-1-circle"></i>
+                    </div>
+                    <h6 class="card-title" style="color: #FF6B6B; font-weight: 600;">Foundation Level</h6>
+                    <p class="card-text small" style="color: #2d3748;">Basic steps, hand gestures, gentle movements, and understanding Manipuri rhythm patterns.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100" style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%); border: 2px solid rgba(78, 205, 196, 0.2); border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);">
+                  <div class="card-body text-center">
+                    <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; background: linear-gradient(45deg, #4ECDC4, #d4af37);">
+                      <i class="bi bi-2-circle"></i>
+                    </div>
+                    <h6 class="card-title" style="color: #4ECDC4; font-weight: 600;">Advanced Level</h6>
+                    <p class="card-text small" style="color: #2d3748;">Raas Leela performances, group choreography, devotional expression, and spiritual abhinaya.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="highlight-box mt-4" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(78, 205, 196, 0.15) 100%); padding: 2rem; border-radius: 20px; border-left: 5px solid #FF6B6B; margin: 2rem 0; backdrop-filter: blur(10px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);">
+              <h6><strong><i class="bi bi-lightbulb"></i> Learning Tips:</strong></h6>
+              <ul class="mb-0">
+                <li>Practice gentle, rounded movements daily</li>
+                <li>Study Manipuri music and rhythm</li>
+                <li>Observe group coordination and harmony</li>
+                <li>Learn the devotional stories behind each piece</li>
+                <li>Embrace humility and spiritual focus in dance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex flex-column align-items-center justify-content-center">
+          <div class="small-image mb-3">
+            <img src="https://i.ytimg.com/vi/kPKcfU_BhLE/maxresdefault.jpg" alt="Manipuri learning process">
+          </div>
+          <br><br>
+          <div class="small-image">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/%EA%AF%8D%EA%AF%A4%EA%AF%8C%EA%AF%A5%EA%AF%A1_%EA%AF%87%EA%AF%A5%EA%AF%9F%EA%AF%85%EA%AF%95%EA%AF%B5.jpg" alt="Manipuri dance practice">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer: exact replica from index.html -->
+  <footer class="about-footer" style="padding: 20px 0;">
+    <div class="container">
+      <div class="row">
+        <!-- Brand Section -->
+        <div class="col-lg-6 col-md-12 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3">
+            <div>
+              <h5 class="mb-1 footer-title-colorful" style="font-weight: 600;">
+                <span class="footer-nritya">Nritya</span><span class="footer-kala">Kala</span>
+              </h5>
+              <small style="color: #666;">Celebrating Classical Dance Heritage</small>
+            </div>
+          </div>
+          <p style="color: #666;">Preserving and promoting the timeless beauty of Indian classical dance for future
+            generations.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="about-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+        <!-- Links & Contact Section -->
+        <div class="col-lg-6 col-md-12">
+          <div class="row">
+            <!-- Quick Links -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Quick Links</h6>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="about-footer-link">Home</a></li>
+                <li><a href="index.html#dance-forms" class="about-footer-link active">Dance Forms</a></li>
+                <li><a href="gallery.html" class="about-footer-link">Gallery</a></li>
+                <li><a href="events.html" class="about-footer-link">Events</a></li>
+                <li><a href="about.html" class="about-footer-link">About Us</a></li>
+              </ul>
+            </div>
+            <!-- Contact -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Contact</h6>
+              <div style="color: #666;">
+                <p><i class="bi bi-geo-alt-fill me-2" style="color: #d4af37;"></i>123 Dance Street, Nagpur, Maharashtra
+                </p>
+                <p><i class="bi bi-telephone-fill me-2" style="color: #d4af37;"></i>+91 98765 43210</p>
+                <p><i class="bi bi-envelope-fill me-2" style="color: #d4af37;"></i>info@nrityakala.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, observerOptions);
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.enhanced-navbar');
+        if (navbar) {
+          if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
+          } else {
+            navbar.style.background = '#ffffff';
+            navbar.style.backdropFilter = 'blur(15px)';
+          }
+        }
+      });
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      document.querySelectorAll('.feature-card, .video-container').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

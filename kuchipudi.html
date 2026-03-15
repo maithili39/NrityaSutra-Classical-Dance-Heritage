@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuchipudi - Classical Dance of Andhra Pradesh | NrityaKala</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts - Same as other pages -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    :root {
+      --primary-color: #FF6B6B;
+      --secondary-color: #4ECDC4;
+      --accent-color: #d4af37;
+      --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --kuchipudi-gradient: linear-gradient(135deg, #faf8f3 0%, #f0e6d2 100%);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+      background-attachment: fixed;
+      background-size: cover;
+      min-height: 100vh;
+    }
+
+    /* Enhanced Navbar Styles */
+     /* Navbar Styles */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 0.5rem 0;
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand {
+      color: #333;
+    }
+
+    .navbar-title-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-title-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-title-enhanced {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .navbar-tagline-enhanced {
+      color: #bbb;
+      font-size: 0.75rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .enhanced-navbar {
+      background: #ffffff;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .enhanced-nav-link {
+      color: #2c3e50 !important;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .enhanced-nav-link:hover {
+      color: #d4af37 !important;
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .enhanced-nav-link.active {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff !important;
+    }
+
+    .enhanced-dropdown {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .enhanced-dropdown-item {
+      color: #2c3e50;
+      transition: all 0.3s ease;
+    }
+
+    .enhanced-dropdown-item.active {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff;
+    }
+
+    .enhanced-toggler {
+      border-color: #d4af37;
+    }
+
+    /* Add missing navbar brand enhanced styles */
+    .navbar-brand-enhanced {
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand-enhanced:hover {
+      transform: scale(1.05);
+    }
+
+    .navbar-logo-enhanced {
+      transition: all 0.3s ease;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      33% {
+        background-position: 50% 100%;
+      }
+
+      66% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Brand and decorative text */
+    .navbar-title-enhanced,
+    .navbar-title-nritya,
+    .navbar-title-kala,
+    .footer-title-colorful,
+    .footer-nritya,
+    .footer-kala,
+    .story-name,
+    .dancer-name {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(224, 231, 255, 0.3);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 80px;
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+      overflow: hidden;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: titleFloat 6s ease-in-out infinite;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #667eea;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    @keyframes titleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Content Sections */
+    .content-section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(193, 154, 107, 0.1);
+    }
+
+    .content-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #1e293b;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .section-title::after {
+      display: none;
+    }
+
+    .section-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.8;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .section-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Enhanced Image Styles */
+    .enhanced-image {
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      border: none;
+      background: transparent;
+      margin: 0;
+    }
+
+    .enhanced-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .content-image {
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      border: none;
+      background: transparent;
+      margin: 0;
+      width: 100%;
+      height: auto;
+    }
+
+    .content-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .small-image {
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      border: none;
+      background: transparent;
+      margin: 0;
+      width: 100%;
+      height: auto;
+    }
+
+    .small-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Highlight Boxes */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(78, 205, 196, 0.15));
+      border-left: 4px solid var(--primary-color);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .fact-box {
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(212, 175, 55, 0.15));
+      border-left: 4px solid var(--secondary-color);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Feature Cards */
+    .feature-card {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.08) 0%, rgba(78, 205, 196, 0.08) 100%);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 107, 107, 0.2);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(78, 205, 196, 0.15) 100%);
+      border: 1px solid rgba(255, 107, 107, 0.4);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .feature-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    /* Learning Path Cards */
+    .learning-card {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--accent-color);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .learning-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(255, 193, 7, 0.2) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .learning-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    /* Footer Styles */
+    .about-footer {
+      background: #fff;
+      color: #333;
+      border-top: 1px solid #eee;
+      padding: 3rem 0 2rem;
+      margin-top: 0;
+      border-top: none;
+    }
+
+    .footer-title-colorful .footer-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 700;
+    }
+
+    .footer-title-colorful .footer-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 700;
+    }
+
+    .about-footer-link {
+      color: #666;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 0.2rem 0;
+    }
+
+    .about-footer-link:hover,
+    .about-footer-link.active {
+      color: #d4af37;
+      transform: translateX(5px);
+    }
+
+    .about-social-link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background: none;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .about-social-link:hover {
+      transform: translateY(-3px);
+      color: #d4af37;
+      box-shadow: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .content-section {
+        padding: 2rem;
+      }
+
+      .enhanced-image {
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top enhanced-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4 fw-bold d-flex align-items-center navbar-brand-enhanced" href="#">
+        <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3 navbar-logo-enhanced">
+        <div>
+          <span class="navbar-title-enhanced">
+            <span class="navbar-title-nritya fw-bold">Nritya</span><span class="navbar-title-kala fw-bold">Kala</span>
+          </span>
+          <small class="navbar-tagline-enhanced d-block">Classical Dance Heritage</small>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 enhanced-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse fs-6" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown mx-1">
+            <a class="nav-link dropdown-toggle fw-semibold px-3 py-2 rounded-pill enhanced-nav-link active" href="#"
+              role="button" data-bs-toggle="dropdown">Dance Forms</a>
+            <ul class="dropdown-menu shadow-lg border-0 p-2 enhanced-dropdown">
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="bharatanatyam.html">Bharatanatyam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="kathak.html">Kathak</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="odissi.html">Odissi</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item active"
+                  href="kuchipudi.html">Kuchipudi</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="kathakali.html">Kathakali</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="mohiniyattam.html">Mohiniyattam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="manipuri.html">Manipuri</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 enhanced-dropdown-item" href="sattriya.html">Sattriya</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="about.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="padding-top: 20px; padding-bottom: 40px;">
+    <div class="hero-content">
+      <div class="container-fluid px-4 px-md-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
+            <h1 class="hero-title">Kuchipudi</h1>
+            <p class="hero-subtitle">The Vibrant Dance Drama of Andhra Pradesh</p>
+            <p class="mb-4" style="font-size: 1.1rem; color: #000105; line-height: 1.6;">Discover the dynamic storytelling and graceful movements of Kuchipudi, a classical dance form that beautifully combines pure dance with dramatic expression, originating from the village of Kuchipudi in Andhra Pradesh.</p>
+            <img src="https://nrityangana.in/wp-content/uploads/2025/03/2.png" alt="Kuchipudi Dancer" class="img-fluid enhanced-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container" style="margin-top: 0; padding-top: 1rem;">
+    <br><br>
+    <!-- Introduction -->
+    <section class="content-section fade-in">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2 class="section-title">The Dance of Dynamic Expression</h2>
+          <div class="section-content">
+            <p class="lead">Kuchipudi stands as one of the most vibrant and versatile among India's eight classical dance forms. Born in the village of Kuchipudi in Andhra Pradesh, this dance tradition seamlessly blends dance, drama, music, and literature into a captivating artistic experience.</p>
+            
+            <p>What sets Kuchipudi apart is its unique combination of graceful movements with theatrical storytelling. The dance form is characterized by quick silver movements, fluid grace, and the ability to effortlessly transition between pure dance (nritta) and expressive dance (nritya), making it both visually stunning and emotionally engaging.</p>
+            
+            <div class="highlight-box">
+              <strong><i class="bi bi-star"></i> Kuchipudi's Uniqueness:</strong> The only classical dance form that incorporates both solo and group performances, with dancers often singing their own songs while performing, creating a complete theatrical experience.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Kuchipudi_Performer_DS.jpg/1200px-Kuchipudi_Performer_DS.jpg" alt="Kuchipudi Dancer" class="img-fluid enhanced-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Historical Origins -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Sacred Village Traditions</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-content">
+            <h4 class="section-subtitle">Village of Origin</h4>
+            <p>Kuchipudi derives its name from the village of Kuchipudi (formerly Kuchelapuram) in Krishna district of Andhra Pradesh. The dance form was developed in the 17th century by Siddhendra Yogi, who created it as a means to propagate devotional themes through the medium of dance and drama.</p>
+            
+            <p>Traditionally passed down from teacher to student within the village, the original Kuchipudi performances were dance-dramas enacted only by men, who would also portray female characters. The art form was largely temple-based and served as a medium for storytelling and spiritual teaching.</p>
+            
+            
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://vedyaspurthi.weebly.com/uploads/9/7/3/3/97334616/kuchipudi-kalavedika.jpg" alt="Kuchipudi Village" class="img-fluid enhanced-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Characteristics -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Distinctive Features of Kuchipudi</h2>
+      <div class="section-content">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-person-arms-up"></i>
+              </div>
+              <h5 class="feature-title">Dramatic Expression</h5>
+              <p>Seamless blend of dance and drama with performers singing, dancing, and acting simultaneously.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+              <h5 class="feature-title">Quick Movements</h5>
+              <p>Known for its brisk, dynamic movements and swift transitions between poses and expressions.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-water"></i>
+              </div>
+              <h5 class="feature-title">Fluid Grace</h5>
+              <p>Emphasis on fluid, flowing movements that create a sense of continuity and grace.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-music-note-beamed"></i>
+              </div>
+              <h5 class="feature-title">Musical Integration</h5>
+              <p>Dancers often sing their own compositions, creating a complete artistic experience.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-palette"></i>
+              </div>
+              <h5 class="feature-title">Vivid Storytelling</h5>
+              <p>Rich narrative tradition featuring mythological tales and devotional themes.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-gem"></i>
+              </div>
+              <h5 class="feature-title">Exquisite Costumes</h5>
+              <p>Elaborate traditional costumes with distinctive makeup and ornate jewelry.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Learning Path for Kuchipudi</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-8 order-lg-1 order-2">
+          <div class="section-content">
+            <p class="lead">Embark on your Kuchipudi journey with a comprehensive approach to mastering this dynamic art form.</p>
+            <div class="row g-4 mt-4">
+              <div class="col-md-6">
+                <div class="learning-card">
+                  <div class="learning-icon">
+                    <i class="bi bi-play-circle-fill"></i>
+                  </div>
+                  <h6 class="card-title fw-bold text-secondary">Foundation Level</h6>
+                  <p class="card-text">Basic postures, fundamental movements (adavus), simple expressions, and introduction to rhythm patterns.</p>
+                  <div class="mt-3">
+                    <small class="text-muted">
+                      <i class="bi bi-clock"></i> Duration: 8-12 months<br>
+                      <i class="bi bi-people"></i> Age: 6+ years
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="learning-card">
+                  <div class="learning-icon">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                  </div>
+                  <h6 class="card-title fw-bold text-secondary">Intermediate Level</h6>
+                  <p class="card-text">Complex choreography, dramatic pieces, singing integration, and performance preparation.</p>
+                  <div class="mt-3">
+                    <small class="text-muted">
+                      <i class="bi bi-clock"></i> Duration: 2-4 years<br>
+                      <i class="bi bi-award"></i> Performance ready
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-lg-2 order-1 d-flex flex-column">
+          <img src="https://communityimpact.com/uploads/images/2025/06/05/369658.jpg" alt="Kuchipudi Learning" class="img-fluid enhanced-image">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhF6bU_cPFYqTHcEDjN4wFOTIZLW42FGgeNMhw8Qmwq-2nw2Vtror2mNfWeR5YWg9Yt2Oo2AmdO6fcofQKvZeQkt-ILFhkeQIucewTw3rgy-YhU2_6eYs0RLsB3Q_wzzPTrDG1ENK7I7OQ/s1600/Workshop-web+copy.jpg" alt="" class="img-fluid enhanced-image" style="margin-top: 20px;">
+        </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer: exact replica from index.html -->
+  <footer class="about-footer" style="padding: 20px 0;">
+    <div class="container">
+      <div class="row">
+        <!-- Brand Section -->
+        <div class="col-lg-6 col-md-12 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3">
+            <div>
+              <h5 class="mb-1 footer-title-colorful" style="font-weight: 600;">
+                <span class="footer-nritya">Nritya</span><span class="footer-kala">Kala</span>
+              </h5>
+              <small style="color: #666;">Celebrating Classical Dance Heritage</small>
+            </div>
+          </div>
+          <p style="color: #666;">Preserving and promoting the timeless beauty of Indian classical dance for future
+            generations.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="about-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+        <!-- Links & Contact Section -->
+        <div class="col-lg-6 col-md-12">
+          <div class="row">
+            <!-- Quick Links -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Quick Links</h6>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="about-footer-link">Home</a></li>
+                <li><a href="index.html#dance-forms" class="about-footer-link active">Dance Forms</a></li>
+                <li><a href="gallery.html" class="about-footer-link">Gallery</a></li>
+                <li><a href="events.html" class="about-footer-link">Events</a></li>
+                <li><a href="about.html" class="about-footer-link">About Us</a></li>
+              </ul>
+            </div>
+            <!-- Contact -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Contact</h6>
+              <div style="color: #666;">
+                <p><i class="bi bi-geo-alt-fill me-2" style="color: #d4af37;"></i>123 Dance Street, Nagpur, Maharashtra
+                </p>
+                <p><i class="bi bi-telephone-fill me-2" style="color: #d4af37;"></i>+91 98765 43210</p>
+                <p><i class="bi bi-envelope-fill me-2" style="color: #d4af37;"></i>info@nrityakala.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Fade in animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, observerOptions);
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.enhanced-navbar');
+        if (navbar) {
+          if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
+          } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(15px)';
+          }
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Card hover effects
+      document.querySelectorAll('.feature-card, .learning-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - NrityaKala | Indian Classical Dance Heritage</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --primary-color: #FF6B6B;
+      --secondary-color: #4ECDC4;
+      --accent-color: #d4af37;
+      --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+    }
+
+    /* Enhanced Navbar Styles */
+    .enhanced-navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand-enhanced {
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand-enhanced:hover {
+      transform: scale(1.05);
+      color: #333;
+    }
+
+    .navbar-logo-enhanced {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .navbar-title-enhanced {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .navbar-title-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-title-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-tagline-enhanced {
+      color: #bbb;
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+
+    .enhanced-nav-link {
+      color: #2c3e50;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .enhanced-nav-link:hover {
+      color: #d4af37 !important;
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .enhanced-nav-link.active {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff !important;
+    }
+
+    .enhanced-dropdown {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .enhanced-dropdown-item {
+      color: #2c3e50;
+      transition: all 0.3s ease;
+    }
+
+    .enhanced-dropdown-item:hover {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff;
+      transform: translateX(5px);
+    }
+
+    .enhanced-toggler {
+      border-color: #d4af37;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(78, 205, 196, 0.9)), 
+                  url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="hero-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.3"/></pattern></defs><rect width="100%25" height="100%25" fill="url(%23hero-pattern)"/></svg>');
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    /* Content Sections */
+    .content-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .content-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Event Cards */
+    .event-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s ease;
+      height: 100%;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .event-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .event-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .event-card:hover .event-image {
+      transform: scale(1.05);
+    }
+
+    .event-content {
+      padding: 2rem;
+      background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    }
+
+    .event-date {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .event-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .event-location {
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .event-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-btn {
+      background: linear-gradient(135deg, var(--accent-color), #b8941f);
+      color: white;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .event-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+      color: white;
+    }
+
+    /* Filter Buttons */
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 3rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-btn {
+      background: white;
+      border: 2px solid var(--accent-color);
+      color: var(--accent-color);
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      margin: 0 0.5rem 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Event Status */
+    .event-status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .status-upcoming {
+      background: rgba(76, 175, 80, 0.9);
+      color: white;
+    }
+
+    .status-ongoing {
+      background: rgba(255, 193, 7, 0.9);
+      color: white;
+    }
+
+    .status-completed {
+      background: rgba(158, 158, 158, 0.9);
+      color: white;
+    }
+
+    /* Featured Event */
+    .featured-event {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05));
+      border: 2px solid var(--accent-color);
+      position: relative;
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+    }
+
+    .featured-event:hover {
+      box-shadow: 0 25px 60px rgba(212, 175, 55, 0.35);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -10px;
+      left: 1rem;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Footer Styles */
+    .about-footer {
+      background: #fff;
+      color: #333;
+      border-top: 1px solid #eee;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-title-colorful .footer-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 700;
+    }
+
+    .footer-title-colorful .footer-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 700;
+    }
+
+    .about-footer-link {
+      color: #666;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 0.2rem 0;
+    }
+
+    .about-footer-link:hover,
+    .about-footer-link.active {
+      color: #d4af37;
+      transform: translateX(5px);
+    }
+
+    .about-social-link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background: none;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .about-social-link:hover {
+      transform: translateY(-3px);
+      color: #d4af37;
+      box-shadow: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .content-section {
+        padding: 2rem;
+      }
+      
+      .event-card {
+        margin-bottom: 2rem;
+      }
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes gradientShift {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      50% {
+        filter: hue-rotate(180deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar: exact replica from index.html -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top enhanced-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4 fw-bold d-flex align-items-center navbar-brand-enhanced" href="index.html">
+        <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3 navbar-logo-enhanced">
+        <div>
+          <span class="navbar-title-enhanced">
+            <span class="navbar-title-nritya fw-bold">Nritya</span><span class="navbar-title-kala fw-bold">Kala</span>
+          </span>
+          <small class="navbar-tagline-enhanced d-block">Classical Dance Heritage</small>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 enhanced-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse fs-6" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown mx-1">
+            <a class="nav-link dropdown-toggle fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="#"
+              role="button" data-bs-toggle="dropdown">Dance Forms</a>
+            <ul class="dropdown-menu shadow-lg border-0 p-2 enhanced-dropdown">
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="bharatanatyam.html">Bharatanatyam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="kathak.html">Kathak</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="odissi.html">Odissi</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="kuchipudi.html">Kuchipudi</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="kathakali.html">Kathakali</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="mohiniyattam.html">Mohiniyattam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="manipuri.html">Manipuri</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 enhanced-dropdown-item" href="sattriya.html">Sattriya</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link active" href="events.html">Events</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="about.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="container">
+        <h1 class="hero-title">Classical Dance Events</h1>
+        <p class="hero-subtitle">Immerse yourself in the world of Indian classical dance through workshops, performances, and cultural celebrations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <!-- Event Filters -->
+    <section class="filter-buttons fade-in">
+      <button class="btn filter-btn active" data-filter="all">All Events</button>
+      <button class="btn filter-btn" data-filter="workshop">Workshops</button>
+      <button class="btn filter-btn" data-filter="performance">Performances</button>
+      <button class="btn filter-btn" data-filter="competition">Competitions</button>
+      <button class="btn filter-btn" data-filter="masterclass">Masterclasses</button>
+    </section>
+
+    <!-- Featured Events -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Upcoming Events</h2>
+      <div class="row">
+        <!-- Featured Event -->
+        <div class="col-lg-6 mb-4">
+          <div class="event-card featured-event" data-category="performance">
+            <div class="featured-badge">Featured</div>
+            <div class="position-relative ">
+              <img src="https://www.bmusician.com/wp-content/uploads/2024/04/pexels-nilavan-18792813.jpg" alt="Classical Dance Festival" class="event-image">
+              <div class="event-status status-upcoming">Upcoming</div>
+            </div>
+            <div class="event-content">
+              <div class="event-date">
+                <i class="bi bi-calendar-event me-2"></i>March 15-17, 2025
+              </div>
+              <h4 class="event-title">Annual Classical Dance Festival</h4>
+              <p class="event-location">
+                <i class="bi bi-geo-alt me-2"></i>Kalakshetra Foundation, Chennai
+              </p>
+              <p class="event-description">
+                Join us for a three-day celebration of Indian classical dance featuring performances by renowned dancers from across the country. Experience the beauty of all eight classical dance forms in one spectacular event.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Regular Event -->
+        <div class="col-lg-6 mb-4">
+          <div class="event-card" data-category="workshop">
+            <div class="position-relative">
+              <img src="images/kathak.jpg" alt="Kathak Workshop" class="event-image">
+              <div class="event-status status-upcoming">Upcoming</div>
+            </div>
+            <div class="event-content">
+              <div class="event-date">
+                <i class="bi bi-calendar-event me-2"></i>February 28, 2025
+              </div>
+              <h4 class="event-title">Kathak Intensive Workshop</h4>
+              <p class="event-location">
+                <i class="bi bi-geo-alt me-2"></i>Kathak Kendra, New Delhi
+              </p>
+              <p class="event-description">
+                Learn the intricate footwork and expressive storytelling of Kathak from Guru Rajesh Kumar. Suitable for intermediate to advanced practitioners.
+              </p>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="event-card" data-category="masterclass">
+            <div class="position-relative">
+              <img src="https://wallpapercave.com/wp/wp8008025.jpg" alt="Odissi Masterclass" class="event-image">
+              <div class="event-status status-upcoming">Upcoming</div>
+            </div>
+            <div class="event-content">
+              <div class="event-date">
+                <i class="bi bi-calendar-event me-2"></i>March 5, 2025
+              </div>
+              <h4 class="event-title">Odissi Masterclass</h4>
+              <p class="event-location">
+                <i class="bi bi-geo-alt me-2"></i>Bhubaneswar, Odisha
+              </p>
+              <p class="event-description">
+                Experience the sculptural beauty of Odissi with Padma Shri awardee Guru Kelucharan Mohapatra's disciples.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="event-card" data-category="competition">
+            <div class="position-relative">
+              <img src="images/kuchipudi.png" alt="Youth Competition" class="event-image">
+              <div class="event-status status-upcoming">Upcoming</div>
+            </div>
+            <div class="event-content">
+              <div class="event-date">
+                <i class="bi bi-calendar-event me-2"></i>March 20, 2025
+              </div>
+              <h4 class="event-title">Youth Dance Competition</h4>
+              <p class="event-location">
+                <i class="bi bi-geo-alt me-2"></i>Kuchipudi Village, Andhra Pradesh
+              </p>
+              <p class="event-description">
+                Young talents showcase their skills in this prestigious competition celebrating the next generation of classical dancers.
+              </p>
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="event-card" data-category="performance">
+            <div class="position-relative">
+              <img src="images/manipuri1.png" alt="Manipuri Performance" class="event-image">
+              <div class="event-status status-upcoming">Upcoming</div>
+            </div>
+            <div class="event-content">
+              <div class="event-date">
+                <i class="bi bi-calendar-event me-2"></i>April 2, 2025
+              </div>
+              <h4 class="event-title">Manipuri Raslila Performance</h4>
+              <p class="event-location">
+                <i class="bi bi-geo-alt me-2"></i>Imphal, Manipur
+              </p>
+              <p class="event-description">
+                Witness the divine love story of Radha and Krishna through the graceful movements of Manipuri dance.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Events -->
+    <section class="content-section fade-in">
+      <h2 class="section-title">Recent Events</h2>
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="event-card" data-category="performance">
+            <div class="position-relative">
+              <img src="images/kathakali.jpg" alt="Kathakali Performance" class="event-image">
+              <div class="event-status status-completed">Completed</div>
+            </div>
+            <div class="event-content">
+              <div class="event-date">
+                <i class="bi bi-calendar-event me-2"></i>January 15, 2025
+              </div>
+              <h4 class="event-title">Kathakali Night - Keechaka Vadham</h4>
+              <p class="event-location">
+                <i class="bi bi-geo-alt me-2"></i>Kerala Kalamandalam, Thrissur
+              </p>
+              <p class="event-description">
+                A mesmerizing performance of the epic tale featuring traditional Kathakali artistry with elaborate costumes and makeup.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="event-card" data-category="workshop">
+            <div class="position-relative">
+              <img src="images/mohiniyattam.png" alt="Mohiniyattam Workshop" class="event-image">
+              <div class="event-status status-completed">Completed</div>
+            </div>
+            <div class="event-content">
+              <div class="event-date">
+                <i class="bi bi-calendar-event me-2"></i>December 20, 2024
+              </div>
+              <h4 class="event-title">Mohiniyattam Expressions Workshop</h4>
+              <p class="event-location">
+                <i class="bi bi-geo-alt me-2"></i>Kerala Kalamandalam, Thrissur
+              </p>
+              <p class="event-description">
+                A specialized workshop focusing on the subtle expressions and graceful movements that define Mohiniyattam.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Calendar & Info -->
+    <section class="content-section fade-in">
+      <div class="row">
+        <div class="col-lg-8">
+          <h2 class="section-title">Event Calendar 2025</h2>
+          <div class="calendar-info">
+            <h4 class="section-subtitle">Upcoming Highlights</h4>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>February 28</strong> - Kathak Intensive Workshop
+                  <br><small class="text-muted">Kathak Kendra, New Delhi</small>
+                </div>
+                <span class="badge bg-primary rounded-pill">Workshop</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>March 5</strong> - Odissi Masterclass
+                  <br><small class="text-muted">Bhubaneswar, Odisha</small>
+                </div>
+                <span class="badge bg-warning rounded-pill">Masterclass</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>March 15-17</strong> - Annual Classical Dance Festival
+                  <br><small class="text-muted">Kalakshetra Foundation, Chennai</small>
+                </div>
+                <span class="badge bg-success rounded-pill">Festival</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>March 20</strong> - Youth Dance Competition
+                  <br><small class="text-muted">Kuchipudi Village, Andhra Pradesh</small>
+                </div>
+                <span class="badge bg-info rounded-pill">Competition</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="section-subtitle">Event Information</h4>
+          <div class="info-box" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1)); padding: 2rem; border-radius: 15px; border-left: 5px solid #d4af37;">
+            <h5><i class="bi bi-info-circle"></i> Registration Details</h5>
+            <p><strong>Early Bird Discount:</strong> Register 30 days in advance for 20% off</p>
+            <p><strong>Group Discounts:</strong> 5+ participants get 15% off</p>
+            <p><strong>Student Rates:</strong> 50% off with valid student ID</p>
+            <hr>
+            <h6><i class="bi bi-envelope"></i> Contact</h6>
+            <p>Email: events@nrityakala.com<br>
+            Phone: +91 98765 43210</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer: exact replica from index.html -->
+  <footer class="about-footer" style="padding: 20px 0;">
+    <div class="container">
+      <div class="row">
+        <!-- Brand Section -->
+        <div class="col-lg-6 col-md-12 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3">
+            <div>
+              <h5 class="mb-1 footer-title-colorful" style="font-weight: 600;">
+                <span class="footer-nritya">Nritya</span><span class="footer-kala">Kala</span>
+              </h5>
+              <small style="color: #666;">Celebrating Classical Dance Heritage</small>
+            </div>
+          </div>
+          <p style="color: #666;">Preserving and promoting the timeless beauty of Indian classical dance for future
+            generations.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="about-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Links & Contact Section -->
+        <div class="col-lg-6 col-md-12">
+          <div class="row">
+            <!-- Quick Links -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Quick Links</h6>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="about-footer-link">Home</a></li>
+                <li><a href="index.html#dance-forms" class="about-footer-link">Dance Forms</a></li>
+                <li><a href="gallery.html" class="about-footer-link">Gallery</a></li>
+                <li><a href="events.html" class="about-footer-link active">Events</a></li>
+                <li><a href="about.html" class="about-footer-link">About Us</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Contact</h6>
+              <div style="color: #666;">
+                <p><i class="bi bi-geo-alt-fill me-2" style="color: #d4af37;"></i>123 Dance Street, Nagpur, Maharashtra
+                </p>
+                <p><i class="bi bi-telephone-fill me-2" style="color: #d4af37;"></i>+91 98765 43210</p>
+                <p><i class="bi bi-envelope-fill me-2" style="color: #d4af37;"></i>info@nrityakala.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fade in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach(element => {
+        observer.observe(element);
+      });
+
+      // Event filtering
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const eventCards = document.querySelectorAll('.event-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          const filter = this.getAttribute('data-filter');
+
+          // Filter events
+          eventCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'block';
+              card.parentElement.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+              card.parentElement.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.enhanced-navbar');
+        if (navbar) {
+          if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
+          } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(15px)';
+          }
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Card hover effects
+      document.querySelectorAll('.event-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px)';
+        });
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

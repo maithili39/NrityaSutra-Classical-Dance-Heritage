@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kathakali - Classical Dance of Kerala | NrityaKala</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts - Same as other pages -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #d4af37;
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+        }
+
+    /* Enhanced Navbar Styles */
+     /* Navbar Styles */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 0.5rem 0;
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand {
+      color: #333;
+    }
+
+    .navbar-title-nritya {
+      background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-title-kala {
+      background: linear-gradient(45deg, #45B7D1, #96CEB4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-family: 'Great Vibes', cursive;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+    }
+
+    .navbar-title-enhanced {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .navbar-tagline-enhanced {
+      color: #bbb;
+      font-size: 0.75rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .enhanced-navbar {
+      background: #ffffff;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .enhanced-nav-link {
+      color: #2c3e50 !important;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .enhanced-nav-link:hover {
+      color: #d4af37 !important;
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .enhanced-nav-link.active {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff !important;
+    }
+
+    .enhanced-dropdown {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .enhanced-dropdown-item {
+      color: #2c3e50;
+      transition: all 0.3s ease;
+    }
+
+    .enhanced-dropdown-item:hover {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff;
+      transform: translateX(5px);
+    }
+
+    .enhanced-dropdown-item.active {
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #fff;
+    }
+
+    .enhanced-toggler {
+      border-color: #d4af37;
+    }
+
+    /* Add missing navbar brand enhanced styles */
+    .navbar-brand-enhanced {
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand-enhanced:hover {
+      transform: scale(1.05);
+    }
+
+    .navbar-logo-enhanced {
+      transition: all 0.3s ease;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      33% {
+        background-position: 50% 100%;
+      }
+
+      66% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* Brand and decorative text */
+    .navbar-title-enhanced,
+    .navbar-title-nritya,
+    .navbar-title-kala,
+    .footer-title-colorful,
+    .footer-nritya,
+    .footer-kala,
+    .story-name,
+    .dancer-name {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(224, 231, 255, 0.3);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 80px;
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+      overflow: hidden;
+    }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: titleFloat 6s ease-in-out infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-content {
+            padding: 5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: titleFloat 6s ease-in-out infinite;
+        }
+
+        .hero-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-enhanced {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image-enhanced:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-btn-enhanced {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-btn-enhanced:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(193, 154, 107, 0.1);
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1e293b;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title::after {
+            display: none;
+        }
+
+        .section-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-content {
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* Image Styles */
+        .content-image {
+            width: 100%;
+            height: 300px;
+            background: transparent;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(193, 154, 107, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .small-image {
+            width: 100%;
+            height: 200px;
+            background: transparent;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-style: italic;
+            border: 2px solid rgba(193, 154, 107, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: transparent;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 2rem 0;
+            border: 2px solid rgba(193, 154, 107, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image-placeholder:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Enhanced Image Styles */
+        .enhanced-image {
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: none;
+            background: transparent;
+            padding: 0;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+
+        .enhanced-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(78, 205, 196, 0.15) 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 5px solid #ff6b6b;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fact-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 5px solid #2196f3;
+            margin: 1.5rem 0;
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #333, #666);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .video-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon i {
+            color: #000 !important;
+            font-weight: bold;
+        }
+
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gold-gradient);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 80px;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 18px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px #d4af37;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Enhanced Footer Styles */
+        .about-footer {
+            background: #fff;
+            margin-top: 0;
+            border-top: none;
+        }
+
+        .footer-title-colorful .footer-nritya {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Great Vibes', cursive;
+            font-weight: 700;
+        }
+
+        .footer-title-colorful .footer-kala {
+            background: linear-gradient(45deg, #45B7D1, #96CEB4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Great Vibes', cursive;
+            font-weight: 700;
+        }
+
+        .about-footer-link {
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 0.2rem 0;
+        }
+
+        .about-footer-link:hover,
+        .about-footer-link.active {
+            color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        .about-social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            background: none;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .about-social-link:hover {
+            transform: translateY(-3px);
+            color: #d4af37;
+            box-shadow: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .content-section {
+                padding: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .video-placeholder {
+                height: 200px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top enhanced-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4 fw-bold d-flex align-items-center navbar-brand-enhanced" href="index.html">
+        <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3 navbar-logo-enhanced">
+        <div>
+          <span class="navbar-title-enhanced">
+            <span class="navbar-title-nritya fw-bold">Nritya</span><span class="navbar-title-kala fw-bold">Kala</span>
+          </span>
+          <small class="navbar-tagline-enhanced d-block">Classical Dance Heritage</small>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 enhanced-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse fs-6" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown mx-1">
+            <a class="nav-link dropdown-toggle fw-semibold px-3 py-2 rounded-pill enhanced-nav-link active" href="#"
+              role="button" data-bs-toggle="dropdown">Dance Forms</a>
+            <ul class="dropdown-menu shadow-lg border-0 p-2 enhanced-dropdown">
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="bharatanatyam.html">Bharatanatyam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="kathak.html">Kathak</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item" href="odissi.html">Odissi</a>
+              </li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="kuchipudi.html">Kuchipudi</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item active"
+                  href="kathakali.html">Kathakali</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="mohiniyattam.html">Mohiniyattam</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 mb-1 enhanced-dropdown-item"
+                  href="manipuri.html">Manipuri</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-3 enhanced-dropdown-item" href="sattriya.html">Sattriya</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link fw-semibold px-3 py-2 rounded-pill enhanced-nav-link" href="about.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="padding-top: 20px; padding-bottom: 40px;">
+        <div class="hero-content">
+            <div class="container-fluid px-4 px-md-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
+                        <div class="text-center" style="margin-bottom: 2.5rem;">
+                            <h1 class="hero-title" style="margin-top: -1.5rem; margin-bottom: 0.3rem;">Kathakali</h1>
+                            <p class="hero-subtitle" style="margin-bottom: 1.2rem;">The Epic Theater Dance of Kerala</p>
+                            <p class="lead text-dark" style="margin-bottom: 0;">Experience the spectacular dance-drama that combines mythology, martial arts, and magnificent costumes in theatrical splendor, bringing ancient Hindu epics to life.</p>
+                        </div>
+                        <div class="hero-image-placeholder mb-4 mx-auto" style="max-width: 700px; width: 100%; height: 350px; border-radius: 15px; background: #fff; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/kathakali.jpg" alt="Kathakali Performer" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" style="margin-top: 0; padding-top: 1rem;">
+      <br><br>
+        <!-- Introduction -->
+        <section id="history" class="content-section fade-in">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title">The Sacred Theater of Kathakali</h2>
+                    <div class="section-content">
+                        <p class="lead">Kathakali is a classical dance-drama that originated in the 17th century in Kerala. It is renowned for its elaborate makeup, ornate costumes, powerful expressions, and dramatic storytelling that brings ancient Hindu epics to life through total theater experience.</p>
+                        
+                        <p>Traditionally performed in temple courtyards and palace grounds, Kathakali combines <strong>dance</strong> (stylized movements), <strong>drama</strong> (character portrayal), <strong>music</strong> (vocal and instrumental), and <strong>martial arts</strong> (Kalaripayattu influence). The art form is characterized by larger-than-life characters, vigorous movements, and deep spiritual narratives.</p>
+                        
+                        <div class="highlight-box">
+                            <strong><i class="bi bi-masks" style="color: #000;"></i> Essence of Kathakali:</strong> A divine synthesis of <strong>vesham</strong> (costume and makeup), <strong>abhinaya</strong> (expression), and <strong>tala</strong> (rhythm), creating an immersive journey into the world of gods, demons, and heroes.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center">
+                    <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                        <img src="https://i.pinimg.com/736x/d0/0a/18/d00a18472a27a0e5a9968947f55fa5e0.jpg" alt="Kathakali performer in traditional makeup and costume" style="width:100%; height:300px; object-fit:cover; border-radius:15px; background:#fff; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Origins -->
+        <section class="content-section fade-in">
+            <h2 class="section-title">Ancient Origins</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-content">
+                        <h4 class="section-subtitle">Royal Patronage</h4>
+                        <p>Kathakali evolved in the 17th century under the patronage of the Zamorin rulers of Calicut and other Kerala kingdoms. It developed from earlier theatrical forms like Krishnanattam and Ramanattam, gradually incorporating elements from martial arts like Kalaripayattu, giving it its distinctive vigorous and athletic quality.</p>
+                        
+                        <p>The art form was traditionally performed in temple courtyards and palace grounds during festivals, serving both as entertainment and spiritual practice. The stories chosen were primarily from Hindu epics, making Kathakali a medium for transmitting cultural and religious values to the masses.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="content-image d-flex align-items-center justify-content-center">
+                        <img src="https://static01.nyt.com/images/2014/12/27/arts/dance/20141227DANCERS-slide-7E2F/20141227DANCERS-slide-7E2F-superJumbo.jpg" alt="Historical Kathakali performance in temple courtyard" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Characteristics -->
+        <section class="content-section fade-in">
+            <h2 class="section-title">Distinctive Features of Kathakali</h2>
+            <div class="section-content">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                            <div class="feature-icon">
+                                <i class="bi bi-palette"></i>
+                            </div>
+                            <h5 class="feature-title">Elaborate Makeup</h5>
+                            <p>Spectacular face painting that transforms performers into divine and demonic characters, with different colors representing different character types.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <div class="feature-icon">
+                                <i class="bi bi-award"></i>
+                            </div>
+                            <h5 class="feature-title">Ornate Costumes</h5>
+                            <p>Magnificent, elaborate costumes with huge skirts, ornate headdresses, and intricate jewelry that create larger-than-life characters.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                            <div class="feature-icon">
+                                <i class="bi bi-eye-fill"></i>
+                            </div>
+                            <h5 class="feature-title">Powerful Expressions</h5>
+                            <p>Highly developed facial expressions and eye movements that convey complex emotions and narratives without spoken words.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+                            <div class="feature-icon">
+                                <i class="bi bi-lightning"></i>
+                            </div>
+                            <h5 class="feature-title">Athletic Movements</h5>
+                            <p>Vigorous, martial arts-inspired movements that require exceptional physical strength, flexibility, and stamina.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <div class="feature-icon">
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </div>
+                            <h5 class="feature-title">Hand Gestures</h5>
+                            <p>Intricate mudras (hand gestures) that communicate specific meanings, emotions, and narrative elements to the audience.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <div class="feature-icon">
+                                <i class="bi bi-music-note-beamed"></i>
+                            </div>
+                            <h5 class="feature-title">Musical Drama</h5>
+                            <p>Integration of classical Carnatic music, percussion, and vocal narration that supports and enhances the dramatic performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Types -->
+        <section class="content-section fade-in">
+            <h2 class="section-title">Character Classifications</h2>
+            <div class="section-content">
+                <p class="lead">Kathakali characters are classified into distinct types, each with specific makeup, costume, and behavioral patterns.</p>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-lg-6">
+                        <div class="card h-100" style="background: linear-gradient(135deg, #c3f7c3 0%, #a8e6cf 100%); border: none; border-radius: 15px;">
+                            <div class="card-body">
+                                <h5 class="card-title text-success"><i class="bi bi-circle-fill"></i> Pacha (Green)</h5>
+                                <p class="card-text">Noble heroes and virtuous characters like Rama, Krishna, and Arjuna. Green makeup symbolizes nobility and virtue.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100" style="background: linear-gradient(135deg, #ffcccb 0%, #ffa07a 100%); border: none; border-radius: 15px;">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger"><i class="bi bi-circle-fill"></i> Kathi (Knife)</h5>
+                                <p class="card-text">Villainous characters with green base and red marks. Represents arrogant and evil kings like Ravana and Duryodhana.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100" style="background: linear-gradient(135deg, #e6e6fa 0%, #d3d3d3 100%); border: none; border-radius: 15px;">
+                            <div class="card-body">
+                                <h5 class="card-title text-dark"><i class="bi bi-circle-fill"></i> Thaadi (Beard)</h5>
+                                <p class="card-text">Divided into white, red, and black beard types representing different character traits from divine to demonic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100" style="background: linear-gradient(135deg, #e0f6ff 0%, #b3e5fc 100%); border: none; border-radius: 15px;">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary"><i class="bi bi-circle-fill"></i> Minukku (Radiant)</h5>
+                                <p class="card-text">Characters with gentle, refined nature like women, sages, and Brahmins. Simple, elegant makeup without elaborate decoration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Costume & Music -->
+        <section class="content-section fade-in">
+            <h2 class="section-title">Costume, Makeup & Musical Ensemble</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="width:100%; display:flex; flex-direction:column; gap:20px;">
+                        <br><br>
+                        <img src="https://th-i.thgim.com/public/incoming/ujsxe3/article66121188.ece/alternates/LANDSCAPE_1200/transgender_kathakali_03.jpg" alt="Kathakali makeup process and traditional costume" style="max-width:100%; max-height:300px; width:100%; height:auto; object-fit:cover; border-radius:15px; background:#fff; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                        <br>
+                        <img src="https://cdn.shopify.com/s/files/1/0381/5597/6839/files/Kathakali_Dress.webp?v=1746592548" alt="Kathakali traditional dress" style="max-width:100%; max-height:300px; width:100%; height:auto; object-fit:cover; border-radius:15px; background:#fff; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-content">
+                        <h4 class="section-subtitle">Transformative Artistry</h4>
+                        <p>The transformation of a performer into a Kathakali character is an art form in itself, taking several hours to complete:</p>
+                        
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-brush text-warning" style="color: #000 !important;"></i> <strong>Makeup Process:</strong> Takes 3-4 hours using natural pigments and rice paste</li>
+                            <li><i class="bi bi-crown text-warning" style="color: #000 !important;"></i> <strong>Kireedam:</strong> Elaborate headdresses specific to each character type</li>
+                            <li><i class="bi bi-gem text-warning" style="color: #000 !important;"></i> <strong>Costumes:</strong> Voluminous skirts, ornate jackets, and character-specific accessories</li>
+                            <li><i class="bi bi-hand-index text-warning" style="color: #000 !important;"></i> <strong>Chutti:</strong> White rice paste borders that frame the face dramatically</li>
+                            <li><i class="bi bi-eye text-warning" style="color: #000 !important;"></i> <strong>Eye Enhancement:</strong> Special techniques to make eyes appear larger and more expressive</li>
+                        </ul>
+                        
+                        <h5 class="text-primary mt-4"><i class="bi bi-music-note-beamed" style="color: #000 !important;"></i> Musical Accompaniment</h5>
+                        <p>Kathakali performances are supported by a traditional orchestra that creates the dramatic atmosphere:</p>
+                        <ul>
+                            <li><strong>Chenda:</strong> Primary percussion instrument providing rhythm</li>
+                            <li><strong>Maddalam:</strong> Barrel-shaped drum for accompaniment</li>
+                            <li><strong>Chengila:</strong> Gong that marks important moments</li>
+                            <li><strong>Elathalam:</strong> Small cymbals for delicate rhythms</li>
+                            <li><strong>Vocals:</strong> Singers who narrate the story and provide dialogue</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Kathakali -->
+        <section class="content-section fade-in">
+            <h2 class="section-title">Journey into Kathakali</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-content">
+                        <p class="lead">Learning Kathakali is an intensive journey that demands physical strength, artistic sensitivity, and deep cultural understanding.</p>
+                        
+                        <div class="row g-3 mt-4">
+                            <div class="col-md-6">
+                                <div class="card h-100" style="background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%); border: none; border-radius: 10px;">
+                                    <div class="card-body text-center">
+                                        <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                            <i class="bi bi-1-circle" style="color: #000 !important; font-weight: bold;"></i>
+                                        </div>
+                                        <h6 class="card-title">Physical Training</h6>
+                                        <p class="card-text small">Kalaripayattu basics, flexibility exercises, and building stamina for demanding performances.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card h-100" style="background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%); border: none; border-radius: 10px;">
+                                    <div class="card-body text-center">
+                                        <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                            <i class="bi bi-2-circle" style="color: #000 !important; font-weight: bold;"></i>
+                                        </div>
+                                        <h6 class="card-title">Character Study</h6>
+                                        <p class="card-text small">Learning makeup techniques, costume handling, and embodying different character types.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card h-100" style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); border: none; border-radius: 10px;">
+                                    <div class="card-body text-center">
+                                        <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                            <i class="bi bi-3-circle" style="color: #000 !important; font-weight: bold;"></i>
+                                        </div>
+                                        <h6 class="card-title">Expression Mastery</h6>
+                                        <p class="card-text small">Developing facial expressions, eye movements, and emotional depth for storytelling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card h-100" style="background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%); border: none; border-radius: 10px;">
+                                    <div class="card-body text-center">
+                                        <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                            <i class="bi bi-4-circle" style="color: #000 !important; font-weight: bold;"></i>
+                                        </div>
+                                        <h6 class="card-title">Performance Readiness</h6>
+                                        <p class="card-text small">Complete story presentations, stage presence, and interaction with musical ensemble.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="https://decodemalayalam.com/wp-content/uploads/2024/07/5.jpg" alt="Kathakali training session with students" class="content-image">
+                    
+                    <div class="mt-3">
+                        <img src="https://fl-i.thgim.com/public/incoming/ejxsp7/article65653774.ece/alternates/FREE_660/09.jpg" alt="Student learning Kathakali makeup techniques" class="small-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      </div>
+
+   <!-- Simple Footer -->
+    <footer class="about-footer" style="padding: 20px 0; background: #fff; color: #222; border-top: 1px solid #eee;">
+    <div class="container">
+      <div class="row">
+        <!-- Brand Section -->
+        <div class="col-lg-6 col-md-12 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/logo.jpeg" width="45px" class="rounded-circle me-3">
+            <div>
+              <h5 class="mb-1 footer-title-colorful" style="font-weight: 600;">
+                <span class="footer-nritya">Nritya</span><span class="footer-kala">Kala</span>
+              </h5>
+              <small style="color: #666;">Celebrating Classical Dance Heritage</small>
+            </div>
+          </div>
+          <p style="color: #666;">Preserving and promoting the timeless beauty of Indian classical dance for future
+            generations.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="about-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="about-social-link"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Links & Contact Section -->
+        <div class="col-lg-6 col-md-12">
+          <div class="row">
+            <!-- Quick Links -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Quick Links</h6>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="about-footer-link active">Home</a></li>
+                <li><a href="index.html#dance-forms" class="about-footer-link">Dance Forms</a></li>
+                <li><a href="gallery.html" class="about-footer-link">Gallery</a></li>
+                <li><a href="events.html" class="about-footer-link">Events</a></li>
+                <li><a href="about.html" class="about-footer-link">About Us</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-6 mb-4">
+              <h6 style="color: #333; font-weight: 600;">Contact</h6>
+              <div style="color: #666;">
+                <p><i class="bi bi-geo-alt-fill me-2" style="color: #d4af37;"></i>123 Dance Street, Nagpur, Maharashtra
+                </p>
+                <p><i class="bi bi-telephone-fill me-2" style="color: #d4af37;"></i>+91 98765 43210</p>
+                <p><i class="bi bi-envelope-fill me-2" style="color: #d4af37;"></i>info@nrityakala.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Fade in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Add padding to body for fixed navbar
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                document.body.style.paddingTop = '0px'; // Reset since hero has margin-top
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add hover effects to cards
+            document.querySelectorAll('.feature-card, .video-container').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Video placeholder click handler
+            document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+                placeholder.addEventListener('click', function() {
+                    // This would normally load the actual video
+                    console.log('Video would load here');
+                    this.style.opacity = '0.8';
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 200);
+                });
+            });
+        });
+
+        // Add some interactive elements
+        document.addEventListener('mousemove', function(e) {
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+                const rect = heroSection.getBoundingClientRect();
+                if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+                    const x = (e.clientX / window.innerWidth) * 100;
+                    const y = (e.clientY / window.innerHeight) * 100;
+                    heroSection.style.backgroundPosition = `${x}% ${y}%`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
