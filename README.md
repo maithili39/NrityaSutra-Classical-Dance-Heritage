@@ -89,4 +89,4 @@ Then open `http://localhost:8000`.
 - Optimize image sizes and formats for faster page loads
 - Replace inline page-specific styles with shared component styles
 - Add deployment instructions for GitHub Pages or Netlify
-- 
+  
